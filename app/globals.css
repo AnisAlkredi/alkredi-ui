@@ -1,0 +1,69 @@
+@import "tailwindcss";
+
+/* ===== Brand Tokens (unified) ===== */
+:root{
+  /* Purple hero */
+  --bg-0: #17063c;
+  --bg-1: #240a57;
+  --bg-2: #2d0b6a;
+
+  --ink: #ffffff;
+  --muted: rgba(255,255,255,.78);
+
+  /* Brand teal (single source of truth) */
+  --teal-main: #12E5C2;  /* primary brand teal */
+  --teal-bar:  #0C8F7D;  /* darker teal (footer bar) */
+
+  /* Backwards-compatible aliases (optional but helpful) */
+  --teal-500: var(--teal-main);
+  --teal-700: var(--teal-bar);
+
+  /* Accent used across site */
+  --accent: var(--teal-main);
+  --accent-2: #35B7FF;
+
+  --border: rgba(255,255,255,.12);
+  --card: rgba(255,255,255,.06);
+}
+
+html, body { height: 100%; }
+
+body{
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 0% 0%, rgba(53,183,255,.18), transparent 55%),
+    radial-gradient(circle at 100% 0%, rgba(18,229,194,.14), transparent 55%),
+    radial-gradient(circle at 50% 110%, rgba(255,255,255,.10), transparent 55%),
+    linear-gradient(180deg, var(--bg-2), var(--bg-0));
+}
+
+.text-muted{ color: var(--muted); }
+.border-brand{ border-color: var(--border); }
+.bg-card{ background: var(--card); }
+
+/* Primary CTA */
+.btn-primary{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:.5rem;
+  padding:.85rem 1.2rem;
+  border-radius:9999px;
+  font-weight:700;
+  color:#05322b;
+  background: linear-gradient(135deg, var(--teal-main), #0FDAB9);
+  box-shadow:
+    0 18px 45px rgba(18,229,194,.24),
+    0 8px 22px rgba(53,183,255,.12),
+    inset 0 1px 0 rgba(255,255,255,.65);
+  transition: transform .15s ease, filter .2s ease, box-shadow .2s ease;
+}
+.btn-primary:hover{
+  transform: translateY(-1px);
+  filter: saturate(1.03);
+  box-shadow:
+    0 22px 55px rgba(18,229,194,.30),
+    0 10px 26px rgba(53,183,255,.14),
+    inset 0 1px 0 rgba(255,255,255,.7);
+}
+.btn-primary:active{ transform: translateY(0); }
