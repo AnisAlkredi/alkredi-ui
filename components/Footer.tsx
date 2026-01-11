@@ -53,7 +53,7 @@ export default function Footer({ lang }: { lang: Lang }) {
               </div>
 
               <a
-                href="https://www.linkedin.com/in/alkredi"
+                href="https://www.linkedin.com/in/anis-alkredi-868088166/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
