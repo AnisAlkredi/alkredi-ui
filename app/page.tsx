@@ -14,8 +14,7 @@ export default function Page() {
   const sp = useSearchParams();
   const raw = sp.get("lang");
 
-  const lang: Lang =
-    raw === "ar" ? "ar" : raw === "en" ? "en" : "de";
+  const lang: Lang = raw === "en" ? "en" : "de";
 
   return (
     <>
