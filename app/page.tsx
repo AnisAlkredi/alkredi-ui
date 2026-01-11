@@ -1,6 +1,3 @@
-"use client";
-
-import { useSearchParams } from "next/navigation";
 import type { Lang } from "@/lib/i18n";
 
 import Header from "@/components/Header";
@@ -11,10 +8,7 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
 export default function Page() {
-  const sp = useSearchParams();
-  const raw = sp.get("lang");
-
-  const lang: Lang = raw === "en" ? "en" : "de";
+  const lang: Lang = "de"; // افتراضيًا
 
   return (
     <>
