@@ -56,17 +56,40 @@ export const dict: Record<Lang, Dict> = {
     },
 
     footer: {
-      rights: "© {year} Alkredi. All rights reserved.",
+      rights: "© {year} Alkredi. Alle Rechte vorbehalten.",
       impressum: "Impressum",
       datenschutz: "Datenschutz",
+      // ✅ هذا مهم لأن Footer.tsx يعتمد عليه
       content: {
-        impressum: `Anis Alkredi
+        impressum: `Angaben gemäß § 5 TMG
+
+Anis Alkredi
 Sonnenstraße 11
 83052 Brückmühl
-Email: info@alkredi.com
-Verantwortlich für den Inhalt: Anis Alkredi`,
-        datenschutz:
-          "Diese Website speichert keine personenbezogenen Daten ohne Ihre ausdrückliche Zustimmung. Bei Nutzung des Kontaktformulars werden Ihre Angaben zur Bearbeitung gespeichert. Es erfolgt keine Weitergabe an Dritte. Ihre Rechte auf Auskunft, Berichtigung und Löschung Ihrer Daten bleiben unberührt.",
+Deutschland
+
+Telefon: +49 176 57766182
+E-Mail: anis.alkredi@gmail.com
+
+Tätigkeit:
+Freiberufliche Nebentätigkeit als IT-Berater und Entwickler gemäß § 19 UStG
+(Kleinunternehmerregelung, keine Umsatzsteuer).
+
+Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:
+Anis Alkredi`,
+        datenschutz: `Datenschutzerklärung
+
+Der Schutz Ihrer persönlichen Daten ist uns ein besonderes Anliegen.
+
+Diese Website verwendet keine Cookies und speichert keine personenbezogenen Daten ohne Ihre ausdrückliche Zustimmung.
+
+Wenn Sie das Kontaktformular nutzen, werden Ihre Angaben ausschließlich zur Bearbeitung Ihrer Anfrage verwendet und direkt an die im Impressum genannte E-Mail-Adresse übermittelt. Es erfolgt keine Speicherung darüber hinaus und keine Weitergabe an Dritte.
+
+Diese Website wird über die Plattform Vercel (Vercel Inc., USA) betrieben. Dabei können technische Server-Logs (z. B. IP-Adresse, Browsertyp, Zugriffszeitpunkt) verarbeitet werden, ausschließlich zur Sicherstellung des technischen Betriebs.
+
+Für das Kontaktformular wird der Dienst Formspree genutzt. Die eingegebenen Daten werden ausschließlich zum Zweck der Kontaktaufnahme über deren Infrastruktur übertragen.
+
+Ihre Rechte gemäß DSGVO (Auskunft, Berichtigung, Löschung, Einschränkung, Datenübertragbarkeit und Widerspruch) bleiben unberührt. Sie erreichen uns über die im Impressum angegebenen Kontaktdaten.`,
       },
     },
   },
@@ -108,7 +131,7 @@ Verantwortlich für den Inhalt: Anis Alkredi`,
     about: {
       title: "About",
       body:
-        "I’m Anis Alkredi — IT consultant & developer with 10+ years of international experience. My focus: smart, elegant solutions that simply work.",
+        "I’m Anis Alkredi — IT consultant & developer with over 10 years of international experience. My focus: smart, elegant solutions that simply work.",
       tagline: "Clarity, style & efficiency.",
     },
 
@@ -119,22 +142,44 @@ Verantwortlich für den Inhalt: Anis Alkredi`,
       email: "Email",
       message: "Message",
       submit: "Send message",
-      note:
-        "This form is provided by Formspree. Their privacy policy applies.",
+      note: "This form is provided by Formspree. Their privacy policy applies.",
     },
 
     footer: {
       rights: "© {year} Alkredi. All rights reserved.",
       impressum: "Imprint",
       datenschutz: "Privacy",
+      // ✅ هذا مهم لأن Footer.tsx يعتمد عليه
       content: {
-        impressum: `Anis Alkredi
+        impressum: `Information according to § 5 TMG
+
+Anis Alkredi
 Sonnenstraße 11
 83052 Brückmühl
-Email: info@alkredi.com
-Responsible for content: Anis Alkredi`,
-        datenschutz:
-          "This website does not store personal data without your explicit consent. If you use the contact form, your details are stored to process your request. No data is shared with third parties. Your rights to access, correction, and deletion remain unaffected.",
+Germany
+
+Phone: +49 176 57766182
+Email: anis.alkredi@gmail.com
+
+Activity:
+Freelance IT consultant and developer under § 19 UStG
+(Small business regulation, no VAT charged).
+
+Responsible for content according to § 55(2) RStV:
+Anis Alkredi`,
+        datenschutz: `Privacy Policy
+
+Protecting your personal data is important to us.
+
+This website does not use cookies and does not store personal data without your explicit consent.
+
+When you use the contact form, your details are used solely to process your request and are sent directly to the email address listed in the imprint. No additional storage or sharing with third parties takes place.
+
+This website is hosted on the Vercel platform (Vercel Inc., USA). Technical server logs (e.g. IP address, browser type, access time) may be processed solely to ensure technical operation.
+
+The contact form uses the Formspree service. The data entered is transmitted only for the purpose of contacting you via their infrastructure.
+
+Your rights under GDPR (access, rectification, deletion, restriction, data portability and objection) remain unaffected. You can contact us using the details provided in the imprint.`,
       },
     },
   },
