@@ -1,4 +1,4 @@
-import LanguageSwitcher from "./LanguageSwitcher";
+//import LanguageSwitcher from "./LanguageSwitcher";
 import type { Lang } from "@/lib/i18n";
 import { t } from "@/lib/i18n";
 
@@ -20,7 +20,8 @@ export default function Header({ lang }: { lang: Lang }) {
         </nav>
 
         <div className="flex items-center gap-3">
-          <LanguageSwitcher lang={lang} />
+         {/* <LanguageSwitcher lang={lang} /> */}
+
           <a href="#contact" className="btn-primary text-sm px-5 py-2">
             {t(lang, "hero.cta")}
           </a>
