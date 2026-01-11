@@ -29,7 +29,8 @@ export default function Header({ lang }: { lang: Lang }) {
           <div className="hidden md:flex items-center gap-4">
             <LanguageSwitcher lang={lang} />
             <a href="#contact" className="btn-primary text-sm">
-              {t(lang, "cta.primary")}
+              {t(lang, "hero.cta")
+}
             </a>
           </div>
 
@@ -86,7 +87,8 @@ export default function Header({ lang }: { lang: Lang }) {
               onClick={() => setOpen(false)}
               className="mt-6 inline-flex btn-primary text-sm"
             >
-              {t(lang, "cta.primary")}
+              {t(lang, "hero.cta")
+}
             </a>
           </div>
         </div>
