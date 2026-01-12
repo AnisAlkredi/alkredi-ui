@@ -1,5 +1,11 @@
 export type Lang = "de" | "en";
 
+function normalizeLang(l: string | Lang) {
+  const s = String(l || "").toLowerCase();
+  if (s.startsWith("en")) return "en" as Lang;
+  return "de" as Lang;
+}
+
 type Dict = Record<string, any>;
 
 export const dict: Record<Lang, Dict> = {
@@ -37,6 +43,34 @@ export const dict: Record<Lang, Dict> = {
       ],
     },
 
+    showcase: {
+      kicker: "PRODUKTE · APPS · DELIVERY",
+      title: "Web & Mobile — von Idee bis Release",
+      subtitle:
+        "Ich entwickle Web- und Mobile-Apps und führe Software-Projekte sauber durch — mit klaren User Stories, Jira-Boards und transparenter Umsetzung.",
+      cta: "Details",
+      items: [
+        {
+          title: "Web Applications",
+          description:
+            "Moderne Web-Apps mit Next.js — schnell, sauber, wartbar. Von Landing Page bis Dashboard mit Auth, APIs und Integrationen.",
+          badge: "Next.js · UI",
+        },
+        {
+          title: "Mobile Apps",
+          description:
+            "Mobile Experiences für Android (und bei Bedarf Cross-Platform). Fokus: klare Flows, stabile Performance, saubere Releases.",
+          badge: "Android · UX",
+        },
+        {
+          title: "Software Project Delivery",
+          description:
+            "Ich strukturiere Anforderungen in User Stories, priorisiere Backlogs und liefere iterativ — mit Jira, Scrum und klarer Kommunikation.",
+          badge: "Jira · Agile",
+        },
+      ],
+    },
+
     about: {
       title: "Über mich",
       body:
@@ -59,7 +93,6 @@ export const dict: Record<Lang, Dict> = {
       rights: "© {year} Alkredi. Alle Rechte vorbehalten.",
       impressum: "Impressum",
       datenschutz: "Datenschutz",
-      // ✅ هذا مهم لأن Footer.tsx يعتمد عليه
       content: {
         impressum: `Angaben gemäß § 5 TMG
 
@@ -128,6 +161,34 @@ Ihre Rechte gemäß DSGVO (Auskunft, Berichtigung, Löschung, Einschränkung, Da
       ],
     },
 
+    showcase: {
+      kicker: "PRODUCTS · APPS · DELIVERY",
+      title: "Web & Mobile — from idea to release",
+      subtitle:
+        "I build web and mobile apps, and I run software projects cleanly — with clear user stories, Jira boards, and transparent delivery.",
+      cta: "Details",
+      items: [
+        {
+          title: "Web Applications",
+          description:
+            "Modern Next.js web apps — fast, clean, maintainable. From landing pages to dashboards with auth, APIs, and integrations.",
+          badge: "Next.js · UI",
+        },
+        {
+          title: "Mobile Apps",
+          description:
+            "Mobile experiences for Android (and cross-platform if needed). Clear flows, stable performance, clean releases.",
+          badge: "Android · UX",
+        },
+        {
+          title: "Software Project Delivery",
+          description:
+            "I turn requirements into user stories, manage backlog priorities, and ship iteratively — using Jira, Scrum, and clear communication.",
+          badge: "Jira · Agile",
+        },
+      ],
+    },
+
     about: {
       title: "About",
       body:
@@ -149,7 +210,6 @@ Ihre Rechte gemäß DSGVO (Auskunft, Berichtigung, Löschung, Einschränkung, Da
       rights: "© {year} Alkredi. All rights reserved.",
       impressum: "Imprint",
       datenschutz: "Privacy",
-      // ✅ هذا مهم لأن Footer.tsx يعتمد عليه
       content: {
         impressum: `Information according to § 5 TMG
 
@@ -185,14 +245,22 @@ Your rights under GDPR (access, rectification, deletion, restriction, data porta
   },
 };
 
-export function t(lang: Lang, key: string): string {
+export function t(lang: string | Lang, key: string): string {
+  const l = normalizeLang(lang);
   const parts = key.split(".");
-  let cur: any = dict[lang];
+  let cur: any = dict[l];
   for (const p of parts) cur = cur?.[p];
   if (typeof cur === "string") return cur;
   return key;
 }
 
-export function servicesFor(lang: Lang) {
-  return dict[lang].services.items as Array<{ title: string; description: string; cta: string }>;
+export function servicesFor(lang: string | Lang) {
+  const l = normalizeLang(lang);
+  return dict[l].services.items as Array<{ title: string; description: string; cta: string }>;
 }
+
+export function showcaseFor(lang: string | Lang) {
+  const l = normalizeLang(lang);
+  return dict[l].showcase.items as Array<{ title: string; description: string; badge?: string }>;
+}
+
