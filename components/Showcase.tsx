@@ -11,32 +11,6 @@ function Pill({ text }: { text: string }) {
   );
 }
 
-/** دوائر ملوّنة بدل الأفاتارات */
-function ColorDot({ color }: { color: string }) {
-  return (
-    <span
-      className="h-8 w-8 rounded-full border-2 border-white shadow-[0_10px_28px_rgba(15,23,42,0.14)]"
-      style={{ background: color }}
-      aria-hidden="true"
-    />
-  );
-}
-
-function DotStack({ colors }: { colors: string[] }) {
-  return (
-    <div className="flex -space-x-2">
-      {colors.slice(0, 3).map((c, i) => (
-        <ColorDot key={`${c}-${i}`} color={c} />
-      ))}
-    </div>
-  );
-}
-
-function contributorsLabel(lang: Lang) {
-  if (lang === "de") return "+3 Mitwirkende";
-  return "+3 contributors";
-}
-
 function MiniAppMock({ variant }: { variant: "web" | "mobile" | "jira" }) {
   // “شاشة” وهمية داخل البطاقة (بدون صور خارجية)
 
@@ -161,13 +135,6 @@ export default function Showcase({ lang }: { lang: Lang }) {
   const items = showcaseFor(lang);
   const variants: Array<"web" | "mobile" | "jira"> = ["web", "mobile", "jira"];
 
-  // ألوان ثابتة لطيفة ومتناسقة مع الواجهة
-  const dotColors: string[][] = [
-    ["#22C3A8", "#0EA5E9", "#A78BFA"], // web
-    ["#34D399", "#F59E0B", "#60A5FA"], // mobile
-    ["#2DD4BF", "#FB7185", "#94A3B8"], // jira
-  ];
-
   return (
     <section id="showcase" className="bg-white py-16 sm:py-20">
       <div className="mx-auto max-w-6xl px-6">
@@ -193,24 +160,15 @@ export default function Showcase({ lang }: { lang: Lang }) {
             >
               <MiniAppMock variant={variants[idx] ?? "web"} />
 
-              {/* العنوان + البادج */}
               <div className="mt-5 flex items-start justify-between gap-3">
                 <h3 className="text-lg font-extrabold text-slate-900">{it.title}</h3>
                 {it.badge ? <Pill text={it.badge} /> : null}
               </div>
 
-              {/* سطر الدوائر */}
-              <div className="mt-3 flex items-center gap-3">
-                <DotStack colors={dotColors[idx] ?? dotColors[0]} />
-                <span className="text-sm text-slate-600">{contributorsLabel(lang)}</span>
-              </div>
-
-              {/* الوصف */}
-              <p className="mt-3 text-sm text-slate-700 leading-relaxed">
+              <p className="mt-2 text-sm text-slate-700 leading-relaxed">
                 {it.description}
               </p>
 
-              {/* CTA */}
               <div className="mt-4">
                 <span className="text-sm font-semibold text-[#0C8F7D] opacity-90">
                   {t(lang, "showcase.cta")} →
