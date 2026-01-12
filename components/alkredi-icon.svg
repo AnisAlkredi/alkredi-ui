@@ -1,0 +1,30 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 512 512"
+  width="512"
+  height="512"
+>
+  <!-- الخلفية -->
+  <rect
+    x="0"
+    y="0"
+    width="512"
+    height="512"
+    rx="96"
+    fill="#22C3A8"
+  />
+
+  <!-- الحرف A -->
+  <text
+    x="50%"
+    y="55%"
+    text-anchor="middle"
+    dominant-baseline="middle"
+    font-size="320"
+    font-weight="800"
+    fill="#ffffff"
+    font-family="Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif"
+  >
+    A
+  </text>
+</svg>
