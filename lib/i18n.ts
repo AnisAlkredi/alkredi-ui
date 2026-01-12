@@ -13,11 +13,13 @@ export const dict: Record<Lang, Dict> = {
     nav: { services: "Services", about: "Über mich", contact: "Kontakt" },
 
     hero: {
+      kicker: "WEB — KI — AUTOMATION",
       title: "Landing Page, Chatbot oder smarte Beratung?",
       subtitle:
         "Web- & KI-Lösungen, die Eindruck machen – ab 490 € für Selbstständige & kleine Unternehmen",
       cta: "Unverbindlich anfragen",
       secondary: "Arbeiten ansehen",
+      note: "Fokus auf Klarheit, saubere Umsetzung und Lösungen, die wirklich genutzt werden.",
     },
 
     services: {
@@ -131,11 +133,13 @@ Ihre Rechte gemäß DSGVO (Auskunft, Berichtigung, Löschung, Einschränkung, Da
     nav: { services: "Services", about: "About", contact: "Contact" },
 
     hero: {
+      kicker: "WEB — AI — AUTOMATION",
       title: "Landing page, chatbot, or smart consulting?",
       subtitle:
         "Web & AI solutions that make an impression — from €490 for freelancers and small businesses",
       cta: "Request a quote",
       secondary: "View work",
+      note: "Focused on clarity, clean execution, and solutions that are actually used.",
     },
 
     services: {
@@ -263,4 +267,3 @@ export function showcaseFor(lang: string | Lang) {
   const l = normalizeLang(lang);
   return dict[l].showcase.items as Array<{ title: string; description: string; badge?: string }>;
 }
-
