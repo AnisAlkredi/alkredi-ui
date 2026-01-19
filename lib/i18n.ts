@@ -10,65 +10,66 @@ type Dict = Record<string, any>;
 
 export const dict: Record<Lang, Dict> = {
   de: {
-    nav: { services: "Services", about: "Über mich", contact: "Kontakt" },
+    nav: { services: "Leistungen", about: "Über mich", contact: "Kontakt" },
 
     hero: {
-      kicker: "WEB — KI — AUTOMATION",
-      title: "Landing Page, Chatbot oder smarte Beratung?",
+      kicker: "WEB · KLAR · PERSÖNLICH",
+      title: "Webdesign für Selbstständige – einfach & wirkungsvoll",
       subtitle:
-        "Web- & KI-Lösungen, die Eindruck machen – ab 490 € für Selbstständige & kleine Unternehmen",
-      cta: "Unverbindlich anfragen",
-      secondary: "Arbeiten ansehen",
-      note: "Fokus auf Klarheit, saubere Umsetzung und Lösungen, die wirklich genutzt werden.",
+        "Landing Pages und Websites, die Vertrauen schaffen und Kontaktanfragen erleichtern.",
+      cta: "Kostenloses Erstgespräch (15 Min.)",
+      secondary: "Beispiele ansehen",
+      note: "Unverbindlich · Kein Verkaufsdruck · Persönlich betreut",
     },
 
     services: {
-      title: "Wobei ich Sie unterstütze",
+      title: "So unterstütze ich Sie",
       items: [
         {
-          title: "Webentwicklung",
+          title: "Landing Pages",
           description:
-            "Starten Sie mit einer schnellen, überzeugenden Landing Page, die aus Klicks Kunden macht.",
+            "Klare, schnelle Seiten für Selbstständige und kleine Unternehmen – mit Fokus auf Anfragen statt Spielereien.",
           cta: "Kostenlos anfragen",
         },
         {
-          title: "Systemintegration",
-          description: "Tools & Plattformen verbinden – schnell, zuverlässig & sicher.",
+          title: "Websites",
+          description:
+            "Moderne, übersichtliche Websites, die Ihr Angebot verständlich präsentieren und Vertrauen aufbauen.",
           cta: "Kostenlos anfragen",
         },
         {
-          title: "KI & Automatisierung",
+          title: "Automatisierung (optional)",
           description:
-            "Automatisieren Sie Ihre Abläufe mit smarten Bots und Workflows – exakt auf Sie zugeschnitten.",
-          cta: "Kostenlos anfragen",
+            "Auf Wunsch unterstütze ich Sie mit einfachen Automatisierungen, z. B. für Kontaktanfragen oder interne Abläufe.",
+          cta: "Kurz besprechen",
         },
       ],
     },
 
     showcase: {
-      kicker: "PRODUKTE · APPS · DELIVERY",
-      title: "Web & Mobile — von Idee bis Release",
+      kicker: "OPTIONAL · ERWEITERBAR",
+      title: "Individuelle Weblösungen bei Bedarf",
       subtitle:
-        "Ich entwickle Web- und Mobile-Apps und führe Software-Projekte sauber durch — mit klaren User Stories, Jira-Boards und transparenter Umsetzung.",
-      cta: "Details",
+        "Nach dem Start mit einer klaren Website können Lösungen schrittweise erweitert werden – strukturiert und nachvollziehbar.",
+      cta: "Mehr erfahren",
       items: [
         {
-          title: "Web Applications",
+          title: "Web-Anwendungen",
           description:
-            "Moderne Web-Apps mit Next.js — schnell, sauber, wartbar. Von Landing Page bis Dashboard mit Auth, APIs und Integrationen.",
-          badge: "Next.js · UI",
+            "Individuelle Weblösungen, z. B. Kundenbereiche oder interne Tools – sauber umgesetzt und wartbar.",
+          badge: "Next.js",
         },
         {
-          title: "Mobile Apps",
+          title: "Integration & Abläufe",
           description:
-            "Mobile Experiences für Android (und bei Bedarf Cross-Platform). Fokus: klare Flows, stabile Performance, saubere Releases.",
-          badge: "Android · UX",
+            "Verknüpfung bestehender Tools und Prozesse, damit alles einfacher und effizienter läuft.",
+          badge: "Automatisierung",
         },
         {
-          title: "Software Project Delivery",
+          title: "Projektumsetzung",
           description:
-            "Ich strukturiere Anforderungen in User Stories, priorisiere Backlogs und liefere iterativ — mit Jira, Scrum und klarer Kommunikation.",
-          badge: "Jira · Agile",
+            "Klare Struktur, verständliche Schritte und persönliche Betreuung – von der Idee bis zur Umsetzung.",
+          badge: "Strukturiert",
         },
       ],
     },
@@ -76,19 +77,20 @@ export const dict: Record<Lang, Dict> = {
     about: {
       title: "Über mich",
       body:
-        "Ich bin Anis Alkredi – IT-Berater & Entwickler mit über 10 Jahren internationaler Erfahrung. Mein Fokus: smarte, elegante Lösungen, die einfach funktionieren.",
-      tagline: "Lösungen mit Klarheit, Stil & Effizienz.",
+        "Ich bin Anis Alkredi – IT-Berater mit langjähriger Erfahrung. Ich begleite Projekte persönlich und sorge für klare, funktionierende Lösungen ohne unnötige Komplexität.",
+      tagline: "Klar. Persönlich. Verlässlich.",
     },
 
     contact: {
-      title: "Lassen Sie uns starten",
-      body: "Ich helfe Ihnen, Ihre Idee schnell & wirkungsvoll umzusetzen.",
+      title: "Kostenloses Erstgespräch",
+      body:
+        "Beschreiben Sie kurz Ihr Vorhaben. Wir klären gemeinsam, ob und wie ich Sie sinnvoll unterstützen kann.",
       name: "Name",
       email: "E-Mail",
-      message: "Nachricht",
-      submit: "Nachricht senden",
+      message: "Kurzbeschreibung Ihres Anliegens",
+      submit: "Anfrage senden",
       note:
-        "Dieser Dienst wird von Formspree bereitgestellt. Es gelten deren Datenschutzrichtlinien.",
+        "Unverbindlich · Ihre Anfrage wird vertraulich behandelt · Keine Weitergabe an Dritte.",
     },
 
     footer: {
@@ -107,24 +109,22 @@ Telefon: +49 176 57766182
 E-Mail: anis.alkredi@gmail.com
 
 Tätigkeit:
-Freiberufliche Nebentätigkeit als IT-Berater und Entwickler gemäß § 19 UStG
+Freiberufliche IT-Beratung gemäß § 19 UStG
 (Kleinunternehmerregelung, keine Umsatzsteuer).
 
 Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:
 Anis Alkredi`,
         datenschutz: `Datenschutzerklärung
 
-Der Schutz Ihrer persönlichen Daten ist uns ein besonderes Anliegen.
+Der Schutz Ihrer persönlichen Daten ist uns wichtig.
 
-Diese Website verwendet keine Cookies und speichert keine personenbezogenen Daten ohne Ihre ausdrückliche Zustimmung.
+Diese Website verwendet keine Cookies.
 
-Wenn Sie das Kontaktformular nutzen, werden Ihre Angaben ausschließlich zur Bearbeitung Ihrer Anfrage verwendet und direkt an die im Impressum genannte E-Mail-Adresse übermittelt. Es erfolgt keine Speicherung darüber hinaus und keine Weitergabe an Dritte.
+Wenn Sie das Kontaktformular nutzen, werden Ihre Angaben ausschließlich zur Bearbeitung Ihrer Anfrage verwendet und direkt an die angegebene E-Mail-Adresse gesendet. Es erfolgt keine Weitergabe an Dritte.
 
-Diese Website wird über die Plattform Vercel (Vercel Inc., USA) betrieben. Dabei können technische Server-Logs (z. B. IP-Adresse, Browsertyp, Zugriffszeitpunkt) verarbeitet werden, ausschließlich zur Sicherstellung des technischen Betriebs.
+Hosting erfolgt über Vercel (Vercel Inc., USA). Dabei können technische Server-Logs verarbeitet werden, ausschließlich zur Sicherstellung des Betriebs.
 
-Für das Kontaktformular wird der Dienst Formspree genutzt. Die eingegebenen Daten werden ausschließlich zum Zweck der Kontaktaufnahme über deren Infrastruktur übertragen.
-
-Ihre Rechte gemäß DSGVO (Auskunft, Berichtigung, Löschung, Einschränkung, Datenübertragbarkeit und Widerspruch) bleiben unberührt. Sie erreichen uns über die im Impressum angegebenen Kontaktdaten.`,
+Ihre Rechte gemäß DSGVO bleiben unberührt.`,
       },
     },
   },
@@ -133,62 +133,63 @@ Ihre Rechte gemäß DSGVO (Auskunft, Berichtigung, Löschung, Einschränkung, Da
     nav: { services: "Services", about: "About", contact: "Contact" },
 
     hero: {
-      kicker: "WEB — AI — AUTOMATION",
-      title: "Landing page, chatbot, or smart consulting?",
+      kicker: "WEB · CLEAR · PERSONAL",
+      title: "Web design for freelancers – simple & effective",
       subtitle:
-        "Web & AI solutions that make an impression — from €490 for freelancers and small businesses",
-      cta: "Request a quote",
-      secondary: "View work",
-      note: "Focused on clarity, clean execution, and solutions that are actually used.",
+        "Landing pages and websites that build trust and make it easy for clients to contact you.",
+      cta: "Free intro call (15 min)",
+      secondary: "View examples",
+      note: "No obligation · No sales pressure · Personally handled",
     },
 
     services: {
-      title: "How I can help",
+      title: "How I help",
       items: [
         {
-          title: "Web Development",
+          title: "Landing Pages",
           description:
-            "Launch a fast, convincing landing page that turns clicks into customers.",
+            "Clear, fast pages for freelancers and small businesses – focused on inquiries, not complexity.",
           cta: "Request info",
         },
         {
-          title: "System Integration",
-          description: "Connect tools & platforms — fast, reliable & secure.",
+          title: "Websites",
+          description:
+            "Modern, structured websites that present your offer clearly and build trust.",
           cta: "Request info",
         },
         {
-          title: "AI & Automation",
+          title: "Automation (optional)",
           description:
-            "Automate your workflows with smart bots and tailored automations — built for your business.",
-          cta: "Request info",
+            "Optional support with simple automations, e.g. contact forms or internal workflows.",
+          cta: "Discuss briefly",
         },
       ],
     },
 
     showcase: {
-      kicker: "PRODUCTS · APPS · DELIVERY",
-      title: "Web & Mobile — from idea to release",
+      kicker: "OPTIONAL · SCALABLE",
+      title: "Custom web solutions if needed",
       subtitle:
-        "I build web and mobile apps, and I run software projects cleanly — with clear user stories, Jira boards, and transparent delivery.",
-      cta: "Details",
+        "After launching with a clear website, solutions can be extended step by step – structured and transparent.",
+      cta: "Learn more",
       items: [
         {
           title: "Web Applications",
           description:
-            "Modern Next.js web apps — fast, clean, maintainable. From landing pages to dashboards with auth, APIs, and integrations.",
-          badge: "Next.js · UI",
+            "Custom web solutions such as client areas or internal tools – clean and maintainable.",
+          badge: "Next.js",
         },
         {
-          title: "Mobile Apps",
+          title: "Integrations",
           description:
-            "Mobile experiences for Android (and cross-platform if needed). Clear flows, stable performance, clean releases.",
-          badge: "Android · UX",
+            "Connecting existing tools and processes to simplify daily work.",
+          badge: "Automation",
         },
         {
-          title: "Software Project Delivery",
+          title: "Project Delivery",
           description:
-            "I turn requirements into user stories, manage backlog priorities, and ship iteratively — using Jira, Scrum, and clear communication.",
-          badge: "Jira · Agile",
+            "Clear structure, understandable steps, and personal responsibility from start to finish.",
+          badge: "Structured",
         },
       ],
     },
@@ -196,18 +197,19 @@ Ihre Rechte gemäß DSGVO (Auskunft, Berichtigung, Löschung, Einschränkung, Da
     about: {
       title: "About",
       body:
-        "I’m Anis Alkredi — IT consultant & developer with over 10 years of international experience. My focus: smart, elegant solutions that simply work.",
-      tagline: "Clarity, style & efficiency.",
+        "I’m Anis Alkredi, an IT consultant with many years of experience. I personally guide projects and focus on clear, practical solutions.",
+      tagline: "Clear. Personal. Reliable.",
     },
 
     contact: {
-      title: "Let’s get started",
-      body: "I’ll help you turn your idea into something real — quickly and effectively.",
+      title: "Free intro call",
+      body:
+        "Briefly describe your project. We’ll see together if and how I can support you.",
       name: "Name",
       email: "Email",
-      message: "Message",
-      submit: "Send message",
-      note: "This form is provided by Formspree. Their privacy policy applies.",
+      message: "Short description",
+      submit: "Send request",
+      note: "No obligation · Your request is treated confidentially.",
     },
 
     footer: {
@@ -226,24 +228,20 @@ Phone: +49 176 57766182
 Email: anis.alkredi@gmail.com
 
 Activity:
-Freelance IT consultant and developer under § 19 UStG
+Freelance IT consulting under § 19 UStG
 (Small business regulation, no VAT charged).
 
-Responsible for content according to § 55(2) RStV:
+Responsible for content:
 Anis Alkredi`,
         datenschutz: `Privacy Policy
 
-Protecting your personal data is important to us.
+This website does not use cookies.
 
-This website does not use cookies and does not store personal data without your explicit consent.
+If you use the contact form, your details are used solely to process your request and are sent directly by email. No data is shared with third parties.
 
-When you use the contact form, your details are used solely to process your request and are sent directly to the email address listed in the imprint. No additional storage or sharing with third parties takes place.
+Hosting is provided by Vercel (Vercel Inc., USA). Technical logs may be processed solely to ensure operation.
 
-This website is hosted on the Vercel platform (Vercel Inc., USA). Technical server logs (e.g. IP address, browser type, access time) may be processed solely to ensure technical operation.
-
-The contact form uses the Formspree service. The data entered is transmitted only for the purpose of contacting you via their infrastructure.
-
-Your rights under GDPR (access, rectification, deletion, restriction, data portability and objection) remain unaffected. You can contact us using the details provided in the imprint.`,
+Your GDPR rights remain unaffected.`,
       },
     },
   },
