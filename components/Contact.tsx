@@ -13,48 +13,83 @@ export default function Contact({ lang }: { lang: Lang }) {
   const [errMsg, setErrMsg] = useState<string>("");
   const formRef = useRef<HTMLFormElement | null>(null);
 
+  function i18nErr(defaultMsgDe: string, defaultMsgEn: string) {
+    return lang === "de" ? defaultMsgDe : defaultMsgEn;
+  }
+
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setStatus("sending");
     setErrMsg("");
 
     const form = e.currentTarget;
-    const formData = new FormData(form);
+
+    // Honeypot: إذا ممتلئ → سبام → نتصرف كأنه نجاح بهدوء
+    const gotcha = (form.elements.namedItem("_gotcha") as HTMLInputElement | null)?.value?.trim();
+    if (gotcha) {
+      setStatus("success");
+      form.reset();
+      return;
+    }
+
+    const name = (form.elements.namedItem("name") as HTMLInputElement | null)?.value?.trim() || "";
+    const email = (form.elements.namedItem("email") as HTMLInputElement | null)?.value?.trim() || "";
+    const message =
+      (form.elements.namedItem("message") as HTMLTextAreaElement | null)?.value?.trim() || "";
+
+    // Subject (مهم: عدّلنا إلى alkredi.de)
+    const subject =
+      lang === "de" ? "Neue Anfrage über alkredi.de" : "New inquiry via alkredi.de";
 
     try {
       const res = await fetch(endpoint, {
         method: "POST",
-        body: formData,
-        headers: { Accept: "application/json" },
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        // إرسال JSON بدل FormData يزيل كثير مشاكل الإنتاج
+        body: JSON.stringify({
+          name,
+          email,
+          message,
+          _subject: subject,
+        }),
       });
 
       if (res.ok) {
         setStatus("success");
         form.reset();
 
-        // رجوع “للصفحة” عمليًا عبر التمرير لنفس القسم
-        setTimeout(() => {
+        // تمرير ناعم لنفس القسم (اختياري)
+        window.setTimeout(() => {
           document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
         }, 50);
 
         return;
       }
 
+      // Formspree يرجع غالبًا JSON فيه errors
       const data = await res.json().catch(() => null);
-      setStatus("error");
-      setErrMsg(
+
+      let msg =
         (data && (data.error || data.message)) ||
-          (lang === "de"
-            ? "Senden fehlgeschlagen. Bitte versuchen Sie es erneut."
-            : "Sending failed. Please try again.")
-      );
+        i18nErr(
+          "Senden fehlgeschlagen. Bitte versuchen Sie es erneut.",
+          "Sending failed. Please try again."
+        );
+
+      // لو رجعت errors array
+      if (data?.errors?.length) {
+        const first = data.errors[0];
+        if (first?.message) msg = first.message;
+      }
+
+      setStatus("error");
+      setErrMsg(msg);
     } catch {
       setStatus("error");
-      setErrMsg(
-        lang === "de"
-          ? "Netzwerkfehler. Bitte prüfen Sie Ihre Verbindung."
-          : "Network error. Please check your connection."
-      );
+      setErrMsg(i18nErr("Netzwerkfehler. Bitte prüfen Sie Ihre Verbindung.", "Network error."));
     }
   }
 
@@ -85,7 +120,7 @@ export default function Contact({ lang }: { lang: Lang }) {
 
           {/* فورم */}
           <div className="rounded-3xl border border-slate-200 bg-white p-6 sm:p-8 shadow-[0_14px_50px_rgba(15,23,42,0.08)]">
-            <form ref={formRef} className="grid gap-4" onSubmit={onSubmit}>
+            <form ref={formRef} className="grid gap-4" onSubmit={onSubmit} noValidate>
               {/* Honeypot ضد السبام */}
               <input
                 type="text"
@@ -93,17 +128,6 @@ export default function Contact({ lang }: { lang: Lang }) {
                 className="hidden"
                 tabIndex={-1}
                 autoComplete="off"
-              />
-
-              {/* Subject في الإيميل */}
-              <input
-                type="hidden"
-                name="_subject"
-                value={
-                  lang === "de"
-                    ? "Neue Anfrage über alkredi.com"
-                    : "New inquiry via alkredi.com"
-                }
               />
 
               <input
@@ -130,7 +154,7 @@ export default function Contact({ lang }: { lang: Lang }) {
 
               <button
                 type="submit"
-                className="btn-primary w-fit disabled:opacity-60 disabled:cursor-not-allowed"
+                className="btn-primary w-fit disabled:cursor-not-allowed disabled:opacity-60"
                 disabled={status === "sending"}
               >
                 {status === "sending"
